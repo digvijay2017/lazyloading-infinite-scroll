@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="before.body.end">
+			<block class="Tutorialstab\LazyloadingInfiniteScroll\Block\Init" name="lazyloadinginfinitescroll.init" template="Tutorialstab_LazyloadingInfiniteScroll::init.phtml" />
+			<block class="Tutorialstab\LazyloadingInfiniteScroll" name="lazyloadinginfinitescroll.scripts" template="Tutorialstab_LazyloadingInfiniteScroll::scripts.phtml" />
+		</referenceContainer> 
+	</body>
+</page>
