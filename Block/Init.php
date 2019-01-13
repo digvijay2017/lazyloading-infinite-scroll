@@ -1,16 +1,44 @@
 <?php
 
+/**
+ * @author  digvijay <digvijayemails@gmail.com>
+ */
 
 namespace Tutorialstab\LazyloadingInfiniteScroll\Block;
 
+/**
+ * Init
+ * @package Tutorialstab_LazyloadingInfiniteScroll
+ */
 class Init extends \Magento\Framework\View\Element\Template
 {   
-
+    
+    /**
+     * Core registry
+     *
+     * @var \Magento\Framework\Registry
+     */
     protected $coreRegistry = null;
-
+    
+    /**
+     * @var \Tutorialstab\LazyloadingInfiniteScroll\Helper\Data
+     */
     public $helperData; 
+    
+    /**
+     * @var \Magento\Store\Model\StoreManagerInterface
+     */
     protected $storeManager;
-
+    
+    /**
+     * __construct
+     * 
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Tutorialstab\LazyloadingInfiniteScroll\Helper\Data $helperData
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Tutorialstab\LazyloadingInfiniteScroll\Helper\Data $helperData,
@@ -23,7 +51,12 @@ class Init extends \Magento\Framework\View\Element\Template
         $this->coreRegistry = $registry;
         $this->storeManager = $storeManager;
     }
-
+    
+    /**
+     * Get product list mode
+     * 
+     * @return string
+     */
     public function getProductListMode()
     {  
         if ($currentMode = $this->getRequest()->getParam('product_list_mode')) {
@@ -60,7 +93,12 @@ class Init extends \Magento\Framework\View\Element\Template
 
         return $productListMode;
     }
-
+    
+    /**
+     * Check if module enable
+     * 
+     * @return boolean
+     */
     public function isEnable() {
         $fullAction       = $this->getRequest()->getFullActionName();
         if ($fullAction == 'catalog_category_view' && $category_obj = $this->coreRegistry->registry('current_category')) {

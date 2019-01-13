@@ -1,9 +1,15 @@
 <?php
 
+/**
+ * @author  digvijay <digvijayemails@gmail.com>
+ */
 
 namespace Tutorialstab\LazyloadingInfiniteScroll\Helper;
-use Magento\Framework\App\Filesystem\DirectoryList;
 
+/**
+ * Data
+ * @package Tutorialstab_ImportExportCategories
+ */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
 
@@ -15,11 +21,15 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     protected $_filterProvider;
 
-
+    /**
+     * @var lazyloadinginfinitescroll/general/enabled
+     */
     const XML_PATH_GENERAL_ENABLED = 'lazyloadinginfinitescroll/general/enabled';
 
 
     /**
+     * __construct
+     * 
      * @param \Magento\Framework\App\Helper\Context      $context        
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager   
      * @param \Magento\Cms\Model\Template\FilterProvider $filterProvider 
@@ -34,7 +44,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->_filterProvider = $filterProvider;
     }
 
-	 /**
+    /**
      * Return brand config value by key and store
      *
      * @param string $field
@@ -55,7 +65,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         }
         return $result;
     }
-
+    
+    /**
+     * Get config data
+     * 
+     * @param string $field
+     * @param null $store
+     * @return string
+     */
     public function getConfigData($field, $store = null)
     {
         $store = $this->_storeManager->getStore($store);
@@ -67,13 +84,25 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $store); 
         return $result;
     }
-  
+    
+    /**
+     * Get filter string
+     * 
+     * @param string $str
+     * @return string
+     */
     public function filter($str)
     {
     	$html = $this->_filterProvider->getPageFilter()->filter($str);
     	return $html;
     } 
-
+    
+    /**
+     * Get config data according store
+     * 
+     * @param int $storeId
+     * @return array
+     */
     public function isEnabled($storeId = null)
     {
         return $this->getConfigData(self::XML_PATH_GENERAL_ENABLED, $storeId);
