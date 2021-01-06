@@ -6,6 +6,8 @@
 
 namespace Tutorialstab\LazyloadingInfiniteScroll\Model\Config\Source;
 
+
+
 /**
  * Categories
  * @package Tutorialstab_ImportExportCategories
@@ -16,6 +18,8 @@ class Categories implements \Magento\Framework\Option\ArrayInterface {
      * @var \Magento\User\Model\UserFactory
      */
     protected $_categoryFactory;
+	
+	
 
     /**
      * @param \Magento\Catalog\Model\CategoryFactory $categoryFactory
