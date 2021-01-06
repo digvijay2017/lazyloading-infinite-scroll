@@ -6,4 +6,5 @@
             <block class="Tutorialstab\LazyloadingInfiniteScroll\Block\Init" name="lazyloadinginfinitescroll.scripts" template="Tutorialstab_LazyloadingInfiniteScroll::scripts.phtml" />
         </referenceContainer> 
     </body>
+	
 </page>

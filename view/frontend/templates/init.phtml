@@ -4,6 +4,8 @@ $productListMode = $block->getProductListMode();
 $enable = $block->isEnable(); 
 $delay = $helper->getConfig('lazyloadinginfinitescroll/instances/delay');
 $delay = $delay?(int)$delay:600;
+
+
 if($helper->isEnabled() && $enable) { ?>  
 <script>
 	require(['jquery',
