@@ -63,6 +63,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         if($result == "") {
             $result = $default;
         }
+		
+		
         return $result;
     }
     
@@ -82,6 +84,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $field,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $store); 
+			
         return $result;
     }
     
@@ -91,6 +94,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @param string $str
      * @return string
      */
+	 
+	 
     public function filter($str)
     {
     	$html = $this->_filterProvider->getPageFilter()->filter($str);
@@ -105,6 +110,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnabled($storeId = null)
     {
+		
         return $this->getConfigData(self::XML_PATH_GENERAL_ENABLED, $storeId);
     }
  
